@@ -1,7 +1,5 @@
-const validateAdd = require("./validateAdd");
-const validateUpdate = require("./validateUpdate");
+const validateAddUpdate = require("./validateAddUpdate");
 
 module.exports = {
-  validateAdd,
-  validateUpdate,
+  validateAddUpdate,
 };
