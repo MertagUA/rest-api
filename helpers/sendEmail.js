@@ -1,13 +1,13 @@
 const nodemailer = require("nodemailer");
 
-const { META_PASSWORD } = process.env;
+const { META_EMAIL, META_PASSWORD } = process.env;
 
 const nodemailerConfig = {
   host: "smtp.meta.ua",
   port: 465,
   secure: true,
   auth: {
-    user: "nodemailertest10@meta.ua",
+    user: META_EMAIL,
     pass: META_PASSWORD,
   },
 };
@@ -15,7 +15,7 @@ const nodemailerConfig = {
 const transport = nodemailer.createTransport(nodemailerConfig);
 
 const sendEmail = async (data) => {
-  const email = { ...data, from: "nodemailertest10@meta.ua" };
+  const email = { ...data, from: META_EMAIL };
   await transport.sendMail(email);
 
   return true;
